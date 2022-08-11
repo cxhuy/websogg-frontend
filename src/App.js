@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Munpia from './pages/platforms/Munpia';
 import Novelpia from './pages/platforms/Novelpia';
 import Kakaopage from './pages/platforms/Kakaopage';
+import Kakaostage from './pages/platforms/Kakaostage';
 import NotFound from './pages/NotFound';
 
 import Navbar from './components/global/navbar.js';
@@ -20,6 +21,7 @@ function App() {
                         <Route path='/platforms/munpia' element={<Munpia/>}/>
                         <Route path='/platforms/novelpia' element={<Novelpia/>}/>
                         <Route path='/platforms/kakaopage' element={<Kakaopage/>}/>
+                        <Route path='/platforms/kakaostage' element={<Kakaostage/>}/>
                         <Route path='*' element={<NotFound/>}/>
                     </Routes>
                     <Footer/>
