@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 
 import Navbar from './components/global/navbar.js'
+import Footer from './components/global/footer';
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                         <Route path='/' element={<Home/>}/>
                         <Route path='*' element={<NotFound/>}/>
                     </Routes>
+                    <Footer/>
                 </div>
             </div>
         </Router>
