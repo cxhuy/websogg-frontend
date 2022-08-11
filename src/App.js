@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import Munpia from './pages/platforms/Munpia';
 import NotFound from './pages/NotFound';
 
 import Navbar from './components/global/navbar.js';
@@ -14,6 +15,7 @@ function App() {
                     <Navbar/>
                     <Routes>
                         <Route path='/' element={<Home/>}/>
+                        <Route path='/platforms/munpia' element={<Munpia/>}/>
                         <Route path='*' element={<NotFound/>}/>
                     </Routes>
                     <Footer/>
