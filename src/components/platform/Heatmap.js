@@ -7,12 +7,12 @@ function Heatmap({ heatmapData, platformGenres }) {
     const [heatmapGenre, setHeatmapGenre] = useState("모든 장르");
 
     const changeHeatmapType = event => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         setHeatmapType(event.target.value);
     };
 
     const changeHeatmapGenre = event => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         setHeatmapGenre(event.target.value);
     };
 
@@ -83,6 +83,15 @@ function Heatmap({ heatmapData, platformGenres }) {
     </div>
     <div>
         <span class="text-lg font-light text-gray-400">평균 조회수가 높은 시간대</span>
+    </div>
+    <div class="flex mt-2">
+        {
+            Object.entries(heatmapData[heatmapGenre].bestTimes).map(([key, value]) =>
+                <div class="w-fit p-2 mr-3 rounded-md bg-white bg-opacity-5">
+                    <span class="text-xl font-light text-gray-200">{value}</span>
+                </div>
+            )
+        }
     </div>
     {/* <div class="flex mt-2">
         {#each heatmapData[heatmapGenre].bestTimes as time}
