@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ReactTooltip from 'react-tooltip';
 
 function Heatmap({ heatmapData, platformGenres }) {
     const days = ["월", "화", "수", "목", "금", "토", "일"];
@@ -46,11 +47,25 @@ function Heatmap({ heatmapData, platformGenres }) {
                         <span class="mr-2 text-xl font-light text-gray-200">{day}</span>
                         {
                             heatmapType === "조회수" ?
-                            Object.entries(heatmapData[heatmapGenre]["views"][dayIndex]).map(([key, views]) =>
-                                <div class="w-7 h-7 rounded-md" style={{backgroundColor: "hsl(100, " + (heatmapData[heatmapGenre].mostViews === 0 ? 0 : views/heatmapData[heatmapGenre].mostViews*100) + "%, 50%)"}}></div>
+                            Object.entries(heatmapData[heatmapGenre]["views"][dayIndex]).map(([key, views], viewIndex) =>
+                                <>
+                                    <div data-tip data-for={"view_" + day + '_' + key} class="w-7 h-7 rounded-md" style={{backgroundColor: "hsl(100, " + (heatmapData[heatmapGenre].mostViews === 0 ? 0 : views/heatmapData[heatmapGenre].mostViews*100) + "%, 50%)"}}></div>
+                                    <ReactTooltip id={"view_" + day + '_' + key} place='bottom' type='dark' effect='solid'>
+                                        {String(viewIndex).padStart(2, '0') + ":00 ~ " + String(viewIndex + 1).padStart(2, '0') + ":00"}<br/>
+                                        조회수 : {views.toLocaleString()}<br/>
+                                        작품수 : {heatmapData[heatmapGenre]["uploads"][dayIndex][viewIndex].toLocaleString()}
+                                    </ReactTooltip>
+                                </>
                             ) : 
-                            Object.entries(heatmapData[heatmapGenre]["uploads"][dayIndex]).map(([key, views]) =>
-                                <div class="w-7 h-7 rounded-md" style={{backgroundColor: "hsl(35, " + (heatmapData[heatmapGenre].mostUploads === 0 ? 0 : views/heatmapData[heatmapGenre].mostUploads*100) + "%, 50%)"}}></div>
+                            Object.entries(heatmapData[heatmapGenre]["uploads"][dayIndex]).map(([key, uploads], uploadIndex) =>
+                                <>
+                                    <div data-tip data-for={"upload_" + day + '_' + key} class="w-7 h-7 rounded-md" style={{backgroundColor: "hsl(35, " + (heatmapData[heatmapGenre].mostUploads === 0 ? 0 : uploads/heatmapData[heatmapGenre].mostUploads*100) + "%, 50%)"}}></div>
+                                    <ReactTooltip id={"upload_" + day + '_' + key} place='bottom' type='dark' effect='solid'>
+                                        {String(uploadIndex).padStart(2, '0') + ":00 ~ " + String(uploadIndex + 1).padStart(2, '0') + ":00"}<br/>
+                                        작품수 : {uploads.toLocaleString()}<br/>
+                                        조회수 : {heatmapData[heatmapGenre]["views"][dayIndex][uploadIndex].toLocaleString()}
+                                    </ReactTooltip>
+                                </>
                             )
                         }
                     </div>
