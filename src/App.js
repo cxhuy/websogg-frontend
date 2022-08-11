@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Munpia from './pages/platforms/Munpia';
+import Novelpia from './pages/platforms/Novelpia';
 import NotFound from './pages/NotFound';
 
 import Navbar from './components/global/navbar.js';
@@ -16,6 +17,7 @@ function App() {
                     <Routes>
                         <Route path='/' element={<Home/>}/>
                         <Route path='/platforms/munpia' element={<Munpia/>}/>
+                        <Route path='/platforms/novelpia' element={<Novelpia/>}/>
                         <Route path='*' element={<NotFound/>}/>
                     </Routes>
                     <Footer/>
