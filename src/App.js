@@ -5,6 +5,7 @@ import Munpia from './pages/platforms/Munpia';
 import Novelpia from './pages/platforms/Novelpia';
 import Kakaopage from './pages/platforms/Kakaopage';
 import Kakaostage from './pages/platforms/Kakaostage';
+import Navernovel from './pages/platforms/Navernovel';
 import NotFound from './pages/NotFound';
 
 import Navbar from './components/global/navbar.js';
@@ -22,6 +23,7 @@ function App() {
                         <Route path='/platforms/novelpia' element={<Novelpia/>}/>
                         <Route path='/platforms/kakaopage' element={<Kakaopage/>}/>
                         <Route path='/platforms/kakaostage' element={<Kakaostage/>}/>
+                        <Route path='/platforms/navernovel' element={<Navernovel/>}/>
                         <Route path='*' element={<NotFound/>}/>
                     </Routes>
                     <Footer/>
