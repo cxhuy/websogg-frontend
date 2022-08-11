@@ -6,7 +6,7 @@ import KakaopageData from "../jsondata/kakaopage.json";
 import KakaostageData from "../jsondata/kakaostage.json";
 import NavernovelData from "../jsondata/navernovel.json";
 
-import MainPlatformInfo from '../components/platform/mainPlatformInfo';
+import MainPlatformInfo from '../components/platform/MainPlatformInfo';
 
 function Home() {
   return (

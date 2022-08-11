@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function mainPlatformInfo({ platformInfo, platformPageName }) {
+function MainPlatformInfo({ platformInfo, platformPageName }) {
   return (
     <Link to={"/platforms/" + platformPageName}>
       <div class="w-full mx-auto mt-3 p-3 font-light rounded-md text-gray-200 bg-white bg-opacity-5 text-center">
@@ -34,4 +34,4 @@ function mainPlatformInfo({ platformInfo, platformPageName }) {
   );
 }
 
-export default mainPlatformInfo;
+export default MainPlatformInfo;

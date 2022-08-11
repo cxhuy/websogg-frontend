@@ -1,6 +1,6 @@
 import React from "react";
 
-function platformInfo({ platformInfoData }) {
+function PlatformInfo({ platformInfoData }) {
   return (
     <div class="container px-3 mt-4 py-2.5">
       <div class="flex flex-col">
@@ -70,4 +70,4 @@ function platformInfo({ platformInfoData }) {
   );
 }
 
-export default platformInfo;
+export default PlatformInfo;
