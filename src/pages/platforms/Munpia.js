@@ -5,7 +5,7 @@ import GenreTable from '../../components/platform/GenreTable';
 import MonopolyTable from '../../components/platform/MonopolyTable';
 import UploadPeriodTable from '../../components/platform/UploadPeriodTable';
 import PricingTable from '../../components/platform/PricingTable';
-// import KeywordsTagsTable from "../../components/platform/keywordsTagsTable.svelte";
+import KeywordsTagsTable from '../../components/platform/KeywordsTagsTable';
 
 import MunpiaData from "../../jsondata/munpia.json";
 
@@ -18,7 +18,7 @@ function Munpia() {
         <MonopolyTable monopolyData={MunpiaData.monopolyData}/>
         <UploadPeriodTable uploadPeriodData={MunpiaData.weeklyUploadCountData}/>
         <PricingTable pricingData={MunpiaData.pricingData}/>
-        {/* <KeywordsTagsTable keywordsTagsData={MunpiaData.keywordsTagsData}/> */}
+        <KeywordsTagsTable keywordsTagsData={MunpiaData.keywordsTagsData}/>
     </>
   )
 }
