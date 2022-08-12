@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import Noticebar from "../../components/global/noticebar";
 import PlatformInfo from "../../components/platform/PlatformInfo";
 import Heatmap from "../../components/platform/Heatmap";
@@ -7,9 +7,26 @@ import MonopolyTable from "../../components/platform/MonopolyTable";
 import UploadPeriodTable from "../../components/platform/UploadPeriodTable";
 import KeywordsTagsTable from "../../components/platform/KeywordsTagsTable";
 
-import KakaopageData from "../../jsondata/kakaopage.json";
-
 function Kakaopage() {
+    const [KakaopageData, setKakaopageData] = useState(null);
+
+    const getData = async () => {
+        const response = await fetch("../jsondata/kakaopage.json", {
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+        });
+        const data = await response.json();
+        setKakaopageData(data);
+    };
+
+    useEffect(() => {
+        getData();
+    }, []);
+
+    if (!KakaopageData) return <div className="bg-gray-900 w-screen h-screen"></div>;
+
     return (
         <>
             <Noticebar noticeMsg="판드, BL 장르는 제외한 정보입니다." />
