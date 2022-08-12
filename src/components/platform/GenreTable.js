@@ -35,20 +35,8 @@ function GenreTable({ genreData }) {
                                         )
                                     )}
                                 </tr>
-                            ) : (
-                                <></>
-                            )
+                            ) : null
                         )}
-                        {/* {#each Object.keys(genreData) as genre}
-                    {#if genre != "모든 장르"}
-                        <tr className="bg-white bg-opacity-5">
-                            <td className="p-3">{genre}</td>
-                            {#each Object.values(genreData[genre]) as data}
-                                <td className="p-3">{data.toLocaleString()}</td>
-                            {/each}
-                        </tr>
-                    {/if}
-                {/each} */}
                     </tbody>
                 </table>
             </div>
@@ -65,7 +53,9 @@ function GenreTable({ genreData }) {
                             </div>
                             <div className="mt-2 grid grid-cols-2">
                                 <div>
-                                    <span className="text-gray-400">조회수: </span>
+                                    <span className="text-gray-400">
+                                        조회수:{" "}
+                                    </span>
                                     {genreData[genre][
                                         "totalViews"
                                     ].toLocaleString()}
@@ -99,7 +89,9 @@ function GenreTable({ genreData }) {
                             </div>
                             <div className="grid grid-cols-2">
                                 <div>
-                                    <span className="text-gray-400">선작수: </span>
+                                    <span className="text-gray-400">
+                                        선작수:{" "}
+                                    </span>
                                     {genreData[genre][
                                         "totalFavs"
                                     ].toLocaleString()}
@@ -114,30 +106,8 @@ function GenreTable({ genreData }) {
                                 </div>
                             </div>
                         </div>
-                    ) : (
-                        <></>
-                    )
+                    ) : null
                 )}
-                {/* {#each Object.keys(genreData) as genre}
-            {#if genre != "모든 장르"}
-                <div className="mt-3 p-3 font-light rounded-md text-gray-200 bg-white bg-opacity-5">
-                    <div className="text-xl">{genre}</div>
-                    <div className="mt-auto ml-auto">{genreData[genre]["novelCount"].toLocaleString()} 작품</div>
-                    <div className="mt-2 grid grid-cols-2">
-                        <div><span className="text-gray-400">조회수: </span>{genreData[genre]["totalViews"].toLocaleString()}</div>
-                        <div className="ml-4"><span className="text-gray-400">평균 조회수: </span>{genreData[genre]["avgViews"].toLocaleString()}</div>
-                    </div>
-                    <div className="grid grid-cols-2">
-                        <div><span className="text-gray-400">좋아요 수: </span>{genreData[genre]["totalLikes"].toLocaleString()}</div>
-                        <div className="ml-4"><span className="text-gray-400">평균 좋아요 수: </span>{genreData[genre]["avgLikes"].toLocaleString()}</div>
-                    </div>
-                    <div className="grid grid-cols-2">
-                        <div><span className="text-gray-400">선작수: </span>{genreData[genre]["totalFavs"].toLocaleString()}</div>
-                        <div className="ml-4"><span className="text-gray-400">평균 선작수: </span>{genreData[genre]["avgFavs"].toLocaleString()}</div>
-                    </div>
-                </div>
-            {/if}
-        {/each} */}
             </div>
         </div>
     );

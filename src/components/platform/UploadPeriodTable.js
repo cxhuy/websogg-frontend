@@ -31,7 +31,9 @@ function UploadPeriodTable({ uploadPeriodData }) {
                                             주 {uploadPeriod}회 이상
                                         </td>
                                     ) : (
-                                        <td className="p-3">주 {uploadPeriod}회</td>
+                                        <td className="p-3">
+                                            주 {uploadPeriod}회
+                                        </td>
                                     )}
                                     {Object.entries(
                                         uploadPeriodData[uploadPeriod]
@@ -43,16 +45,6 @@ function UploadPeriodTable({ uploadPeriodData }) {
                                 </tr>
                             )
                         )}
-                        {/* {#each Object.keys(uploadPeriodData) as uploadPeriod}
-                    {#if uploadPeriod != "모든 장르"}
-                        <tr className="bg-white bg-opacity-5">
-                            <td className="p-3">{uploadPeriod}</td>
-                            {#each Object.values(uploadPeriodData[uploadPeriod]) as data}
-                                <td className="p-3">{data.toLocaleString()}</td>
-                            {/each}
-                        </tr>
-                    {/if}
-                {/each} */}
                     </tbody>
                 </table>
             </div>
@@ -65,7 +57,9 @@ function UploadPeriodTable({ uploadPeriodData }) {
                                     주 {uploadPeriod}회 이상
                                 </div>
                             ) : (
-                                <div className="text-xl">주 {uploadPeriod}회</div>
+                                <div className="text-xl">
+                                    주 {uploadPeriod}회
+                                </div>
                             )}
                             <div className="mt-auto ml-auto">
                                 {uploadPeriodData[uploadPeriod][
@@ -75,7 +69,9 @@ function UploadPeriodTable({ uploadPeriodData }) {
                             </div>
                             <div className="mt-2 grid grid-cols-2">
                                 <div>
-                                    <span className="text-gray-400">조회수: </span>
+                                    <span className="text-gray-400">
+                                        조회수:{" "}
+                                    </span>
                                     {uploadPeriodData[uploadPeriod][
                                         "totalViews"
                                     ].toLocaleString()}
@@ -109,7 +105,9 @@ function UploadPeriodTable({ uploadPeriodData }) {
                             </div>
                             <div className="grid grid-cols-2">
                                 <div>
-                                    <span className="text-gray-400">선작수: </span>
+                                    <span className="text-gray-400">
+                                        선작수:{" "}
+                                    </span>
                                     {uploadPeriodData[uploadPeriod][
                                         "totalFavs"
                                     ].toLocaleString()}
@@ -126,26 +124,6 @@ function UploadPeriodTable({ uploadPeriodData }) {
                         </div>
                     )
                 )}
-                {/* {#each Object.keys(uploadPeriodData) as uploadPeriod}
-            {#if uploadPeriod != "모든 장르"}
-                <div className="mt-3 p-3 font-light rounded-md text-gray-200 bg-white bg-opacity-5">
-                    <div className="text-xl">{uploadPeriod}</div>
-                    <div className="mt-auto ml-auto">{uploadPeriodData[uploadPeriod]["novelCount"].toLocaleString()} 작품</div>
-                    <div className="mt-2 grid grid-cols-2">
-                        <div><span className="text-gray-400">조회수: </span>{uploadPeriodData[uploadPeriod]["totalViews"].toLocaleString()}</div>
-                        <div className="ml-4"><span className="text-gray-400">평균 조회수: </span>{uploadPeriodData[uploadPeriod]["avgViews"].toLocaleString()}</div>
-                    </div>
-                    <div className="grid grid-cols-2">
-                        <div><span className="text-gray-400">좋아요 수: </span>{uploadPeriodData[uploadPeriod]["totalLikes"].toLocaleString()}</div>
-                        <div className="ml-4"><span className="text-gray-400">평균 좋아요 수: </span>{uploadPeriodData[uploadPeriod]["avgLikes"].toLocaleString()}</div>
-                    </div>
-                    <div className="grid grid-cols-2">
-                        <div><span className="text-gray-400">선작수: </span>{uploadPeriodData[uploadPeriod]["totalFavs"].toLocaleString()}</div>
-                        <div className="ml-4"><span className="text-gray-400">평균 선작수: </span>{uploadPeriodData[uploadPeriod]["avgFavs"].toLocaleString()}</div>
-                    </div>
-                </div>
-            {/if}
-        {/each} */}
             </div>
         </div>
     );

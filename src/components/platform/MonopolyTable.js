@@ -37,16 +37,6 @@ function MonopolyTable({ monopolyData }) {
                                 </tr>
                             )
                         )}
-                        {/* {#each Object.keys(monopolyData) as monopoly}
-                    {#if monopoly != "모든 장르"}
-                        <tr className="bg-white bg-opacity-5">
-                            <td className="p-3">{monopoly}</td>
-                            {#each Object.values(monopolyData[monopoly]) as data}
-                                <td className="p-3">{data.toLocaleString()}</td>
-                            {/each}
-                        </tr>
-                    {/if}
-                {/each} */}
                     </tbody>
                 </table>
             </div>
@@ -68,7 +58,9 @@ function MonopolyTable({ monopolyData }) {
                                 ].toLocaleString()}
                             </div>
                             <div className="ml-4">
-                                <span className="text-gray-400">평균 조회수: </span>
+                                <span className="text-gray-400">
+                                    평균 조회수:{" "}
+                                </span>
                                 {monopolyData[monopoly][
                                     "avgViews"
                                 ].toLocaleString()}
@@ -76,7 +68,9 @@ function MonopolyTable({ monopolyData }) {
                         </div>
                         <div className="grid grid-cols-2">
                             <div>
-                                <span className="text-gray-400">좋아요 수: </span>
+                                <span className="text-gray-400">
+                                    좋아요 수:{" "}
+                                </span>
                                 {monopolyData[monopoly][
                                     "totalLikes"
                                 ].toLocaleString()}
@@ -98,7 +92,9 @@ function MonopolyTable({ monopolyData }) {
                                 ].toLocaleString()}
                             </div>
                             <div className="ml-4">
-                                <span className="text-gray-400">평균 선작수: </span>
+                                <span className="text-gray-400">
+                                    평균 선작수:{" "}
+                                </span>
                                 {monopolyData[monopoly][
                                     "avgFavs"
                                 ].toLocaleString()}
@@ -106,26 +102,6 @@ function MonopolyTable({ monopolyData }) {
                         </div>
                     </div>
                 ))}
-                {/* {#each Object.keys(monopolyData) as monopoly}
-            {#if monopoly != "모든 장르"}
-                <div className="mt-3 p-3 font-light rounded-md text-gray-200 bg-white bg-opacity-5">
-                    <div className="text-xl">{monopoly}</div>
-                    <div className="mt-auto ml-auto">{monopolyData[monopoly]["novelCount"].toLocaleString()} 작품</div>
-                    <div className="mt-2 grid grid-cols-2">
-                        <div><span className="text-gray-400">조회수: </span>{monopolyData[monopoly]["totalViews"].toLocaleString()}</div>
-                        <div className="ml-4"><span className="text-gray-400">평균 조회수: </span>{monopolyData[monopoly]["avgViews"].toLocaleString()}</div>
-                    </div>
-                    <div className="grid grid-cols-2">
-                        <div><span className="text-gray-400">좋아요 수: </span>{monopolyData[monopoly]["totalLikes"].toLocaleString()}</div>
-                        <div className="ml-4"><span className="text-gray-400">평균 좋아요 수: </span>{monopolyData[monopoly]["avgLikes"].toLocaleString()}</div>
-                    </div>
-                    <div className="grid grid-cols-2">
-                        <div><span className="text-gray-400">선작수: </span>{monopolyData[monopoly]["totalFavs"].toLocaleString()}</div>
-                        <div className="ml-4"><span className="text-gray-400">평균 선작수: </span>{monopolyData[monopoly]["avgFavs"].toLocaleString()}</div>
-                    </div>
-                </div>
-            {/if}
-        {/each} */}
             </div>
         </div>
     );

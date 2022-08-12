@@ -168,26 +168,6 @@ function Heatmap({ heatmapData, platformGenres }) {
                         </div>
                     ))}
                 </div>
-                {/* <div className="mt-3 flex flex-col gap-1.5">
-            {#each days as day, dayIndex}
-                <div className="flex gap-1.5">
-                    <span className="mr-2 text-xl font-light text-gray-200">{day}</span>
-                    {#if heatmapType == "조회수"}
-                        {#each Object.values(heatmapData[heatmapGenre]["views"][dayIndex]) as views, index}
-                            <Tooltip content="{String(index).padStart(2, '0') + ":00 ~ " + String(index + 1).padStart(2, '0') + ":00\n"}조회수 : {views.toLocaleString() + '\n'}작품수 : {heatmapData[heatmapGenre]["uploads"][dayIndex][index].toLocaleString()}">
-                                <div className="w-7 h-7 rounded-md" style="background-color: hsl(100, {views/heatmapData[heatmapGenre].mostViews*100}%, 50%);"></div>
-                            </Tooltip>
-                        {/each}
-                    {:else}
-                        {#each Object.values(heatmapData[heatmapGenre]["uploads"][dayIndex]) as uploads, index}
-                            <Tooltip content="{String(index).padStart(2, '0') + ":00 ~ " + String(index + 1).padStart(2, '0') + ":00\n"}작품수 : {uploads.toLocaleString() + '\n'}조회수 : {heatmapData[heatmapGenre]["views"][dayIndex][index].toLocaleString()}">
-                                <div className="w-7 h-7 rounded-md" style="background-color: hsl(35, {uploads/heatmapData[heatmapGenre].mostUploads*100}%, 50%);"></div>
-                            </Tooltip>
-                        {/each}
-                    {/if}
-                </div>
-            {/each}
-        </div> */}
             </div>
             <div className="mt-0 lg:mt-8">
                 <span className="text-3xl font-light text-gray-200">
@@ -210,13 +190,6 @@ function Heatmap({ heatmapData, platformGenres }) {
                     )
                 )}
             </div>
-            {/* <div className="flex mt-2">
-        {#each heatmapData[heatmapGenre].bestTimes as time}
-            <div className="w-fit p-2 mr-3 rounded-md bg-white bg-opacity-5">
-                <span className="text-xl font-light text-gray-200">{time}</span>
-            </div>
-        {/each}
-    </div> */}
         </div>
     );
 }

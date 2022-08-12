@@ -19,8 +19,12 @@ function KeywordsTagsTable({ keywordsTagsData }) {
                     <table className="mt-3 w-full table-auto font-light text-gray-200">
                         <thead className="bg-white bg-opacity-10">
                             <tr className="text-left">
-                                <th className="w-1/3 p-3 font-normal">키워드</th>
-                                <th className="w-1/3 p-3 font-normal">작품수</th>
+                                <th className="w-1/3 p-3 font-normal">
+                                    키워드
+                                </th>
+                                <th className="w-1/3 p-3 font-normal">
+                                    작품수
+                                </th>
                                 <th className="w-1/3 p-3 font-normal">
                                     평균 조회수
                                 </th>
@@ -53,7 +57,9 @@ function KeywordsTagsTable({ keywordsTagsData }) {
                         <table className="mt-3 w-full table-auto font-light text-gray-200">
                             <thead className="bg-white bg-opacity-10">
                                 <tr className="text-left">
-                                    <th className="w-1/3 p-3 font-normal">태그</th>
+                                    <th className="w-1/3 p-3 font-normal">
+                                        태그
+                                    </th>
                                     <th className="w-1/3 p-3 font-normal">
                                         작품수
                                     </th>
@@ -79,34 +85,7 @@ function KeywordsTagsTable({ keywordsTagsData }) {
                             </tbody>
                         </table>
                     </div>
-                ) : (
-                    <></>
-                )}
-                {/* {#if Object.values(keywordsTagsData.tagData).length > 0}
-            <div className="mt-6 md:mt-0">
-                <div>
-                    <span className="text-3xl font-light text-gray-200">인기 태그</span>
-                </div>
-                <table className="mt-3 w-full table-auto font-light text-gray-200">
-                    <thead className="bg-white bg-opacity-10">
-                        <tr className="text-left">
-                            <th className="w-1/3 p-3 font-normal">태그</th>
-                            <th className="w-1/3 p-3 font-normal">작품수</th>
-                            <th className="w-1/3 p-3 font-normal">평균 조회수</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {#each Object.values(keywordsTagsData.tagData) as tag}
-                            <tr className="bg-white bg-opacity-5">
-                                {#each Object.values(tag) as data}
-                                    <td className="p-3">{data.toLocaleString()}</td>
-                                {/each}
-                            </tr>
-                        {/each}
-                    </tbody>
-                </table>
-            </div>
-        {/if} */}
+                ) : null}
             </div>
         </div>
     );
