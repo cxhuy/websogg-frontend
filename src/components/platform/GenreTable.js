@@ -25,11 +25,22 @@ function GenreTable({ genreData }) {
                     <tbody>
                         {Object.entries(genreData).map(([genre, value]) =>
                             genre !== "모든 장르" ? (
-                                <tr className="bg-white bg-opacity-5">
+                                <tr
+                                    key={"desktop_" + genre}
+                                    className="bg-white bg-opacity-5"
+                                >
                                     <td className="p-3">{genre}</td>
                                     {Object.entries(genreData[genre]).map(
                                         ([key, data]) => (
-                                            <td className="p-3">
+                                            <td
+                                                key={
+                                                    "desktop_" +
+                                                    genre +
+                                                    "_" +
+                                                    key
+                                                }
+                                                className="p-3"
+                                            >
                                                 {data.toLocaleString()}
                                             </td>
                                         )
@@ -43,7 +54,10 @@ function GenreTable({ genreData }) {
             <div className="lg:hidden">
                 {Object.entries(genreData).map(([genre, value]) =>
                     genre !== "모든 장르" ? (
-                        <div className="mt-3 p-3 font-light rounded-md text-gray-200 bg-white bg-opacity-5">
+                        <div
+                            key={"mobile_" + genre}
+                            className="mt-3 p-3 font-light rounded-md text-gray-200 bg-white bg-opacity-5"
+                        >
                             <div className="text-xl">{genre}</div>
                             <div className="mt-auto ml-auto">
                                 {genreData[genre][

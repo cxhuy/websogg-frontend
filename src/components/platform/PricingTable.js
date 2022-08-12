@@ -24,11 +24,19 @@ function PricingTable({ pricingData }) {
                     </thead>
                     <tbody>
                         {Object.entries(pricingData).map(([pricing, value]) => (
-                            <tr className="bg-white bg-opacity-5">
+                            <tr
+                                key={"desktop_" + pricing}
+                                className="bg-white bg-opacity-5"
+                            >
                                 <td className="p-3">{pricing}</td>
                                 {Object.entries(pricingData[pricing]).map(
                                     ([key, data]) => (
-                                        <td className="p-3">
+                                        <td
+                                            key={
+                                                "desktop_" + pricing + "_" + key
+                                            }
+                                            className="p-3"
+                                        >
                                             {data.toLocaleString()}
                                         </td>
                                     )
@@ -40,7 +48,10 @@ function PricingTable({ pricingData }) {
             </div>
             <div className="lg:hidden">
                 {Object.entries(pricingData).map(([pricing, value]) => (
-                    <div className="mt-3 p-3 font-light rounded-md text-gray-200 bg-white bg-opacity-5">
+                    <div
+                        key={"mobile" + pricing}
+                        className="mt-3 p-3 font-light rounded-md text-gray-200 bg-white bg-opacity-5"
+                    >
                         <div className="text-xl">{pricing}</div>
                         <div className="mt-auto ml-auto">
                             {pricingData[pricing][

@@ -33,10 +33,21 @@ function KeywordsTagsTable({ keywordsTagsData }) {
                         <tbody>
                             {Object.entries(keywordsTagsData.keywordData).map(
                                 ([key, keyword]) => (
-                                    <tr className="bg-white bg-opacity-5">
+                                    <tr
+                                        key={"keyword_" + key}
+                                        className="bg-white bg-opacity-5"
+                                    >
                                         {Object.entries(keyword).map(
-                                            ([key, data]) => (
-                                                <td className="p-3">
+                                            ([key, data], index) => (
+                                                <td
+                                                    key={
+                                                        "keyword_" +
+                                                        key +
+                                                        "_" +
+                                                        index
+                                                    }
+                                                    className="p-3"
+                                                >
                                                     {data.toLocaleString()}
                                                 </td>
                                             )
@@ -71,10 +82,21 @@ function KeywordsTagsTable({ keywordsTagsData }) {
                             <tbody>
                                 {Object.entries(keywordsTagsData.tagData).map(
                                     ([key, tag]) => (
-                                        <tr className="bg-white bg-opacity-5">
+                                        <tr
+                                            key={"tag_" + key}
+                                            className="bg-white bg-opacity-5"
+                                        >
                                             {Object.entries(tag).map(
-                                                ([key, data]) => (
-                                                    <td className="p-3">
+                                                ([key, data], index) => (
+                                                    <td
+                                                        key={
+                                                            "tag_" +
+                                                            key +
+                                                            "_" +
+                                                            index
+                                                        }
+                                                        className="p-3"
+                                                    >
                                                         {data.toLocaleString()}
                                                     </td>
                                                 )

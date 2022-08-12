@@ -47,13 +47,15 @@ function Heatmap({ heatmapData, platformGenres }) {
                         className="ml-4 block py-1 px-0 w-1/6 text-sm bg-transparent border-0 border-b-2 text-gray-400 border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
                     >
                         {platformGenres.map((genre) => (
-                            <option value={genre}>{genre}</option>
+                            <option key={genre} value={genre}>
+                                {genre}
+                            </option>
                         ))}
                     </select>
                 </div>
                 <div className="mt-3 flex flex-col gap-1.5">
                     {days.map((day, dayIndex) => (
-                        <div className="flex gap-1.5">
+                        <div key={day} className="flex gap-1.5">
                             <span className="mr-2 text-xl font-light text-gray-200">
                                 {day}
                             </span>
@@ -63,7 +65,11 @@ function Heatmap({ heatmapData, platformGenres }) {
                                           dayIndex
                                       ]
                                   ).map(([key, views], viewIndex) => (
-                                      <>
+                                      <div
+                                          key={
+                                              day + "_" + key + "_" + viewIndex
+                                          }
+                                      >
                                           <div
                                               data-tip
                                               data-for={
@@ -109,14 +115,22 @@ function Heatmap({ heatmapData, platformGenres }) {
                                                   viewIndex
                                               ].toLocaleString()}
                                           </ReactTooltip>
-                                      </>
+                                      </div>
                                   ))
                                 : Object.entries(
                                       heatmapData[heatmapGenre]["uploads"][
                                           dayIndex
                                       ]
                                   ).map(([key, uploads], uploadIndex) => (
-                                      <>
+                                      <div
+                                          key={
+                                              day +
+                                              "_" +
+                                              key +
+                                              "_" +
+                                              uploadIndex
+                                          }
+                                      >
                                           <div
                                               data-tip
                                               data-for={
@@ -163,7 +177,7 @@ function Heatmap({ heatmapData, platformGenres }) {
                                                   uploadIndex
                                               ].toLocaleString()}
                                           </ReactTooltip>
-                                      </>
+                                      </div>
                                   ))}
                         </div>
                     ))}
@@ -182,7 +196,10 @@ function Heatmap({ heatmapData, platformGenres }) {
             <div className="flex mt-2">
                 {Object.entries(heatmapData[heatmapGenre].bestTimes).map(
                     ([key, value]) => (
-                        <div className="w-fit p-2 mr-3 rounded-md bg-white bg-opacity-5">
+                        <div
+                            key={value}
+                            className="w-fit p-2 mr-3 rounded-md bg-white bg-opacity-5"
+                        >
                             <span className="text-xl font-light text-gray-200">
                                 {value}
                             </span>

@@ -25,7 +25,10 @@ function UploadPeriodTable({ uploadPeriodData }) {
                     <tbody>
                         {Object.entries(uploadPeriodData).map(
                             ([uploadPeriod, value]) => (
-                                <tr className="bg-white bg-opacity-5">
+                                <tr
+                                    key={"desktop_" + uploadPeriod}
+                                    className="bg-white bg-opacity-5"
+                                >
                                     {uploadPeriod === "7" ? (
                                         <td className="p-3">
                                             주 {uploadPeriod}회 이상
@@ -38,7 +41,15 @@ function UploadPeriodTable({ uploadPeriodData }) {
                                     {Object.entries(
                                         uploadPeriodData[uploadPeriod]
                                     ).map(([key, data]) => (
-                                        <td className="p-3">
+                                        <td
+                                            key={
+                                                "desktop_" +
+                                                uploadPeriod +
+                                                "_" +
+                                                key
+                                            }
+                                            className="p-3"
+                                        >
                                             {data.toLocaleString()}
                                         </td>
                                     ))}
@@ -51,7 +62,10 @@ function UploadPeriodTable({ uploadPeriodData }) {
             <div className="lg:hidden">
                 {Object.entries(uploadPeriodData).map(
                     ([uploadPeriod, value]) => (
-                        <div className="mt-3 p-3 font-light rounded-md text-gray-200 bg-white bg-opacity-5">
+                        <div
+                            key={"mobile" + uploadPeriod}
+                            className="mt-3 p-3 font-light rounded-md text-gray-200 bg-white bg-opacity-5"
+                        >
                             {uploadPeriod === "7" ? (
                                 <div className="text-xl">
                                     주 {uploadPeriod}회 이상

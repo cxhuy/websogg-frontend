@@ -25,11 +25,22 @@ function MonopolyTable({ monopolyData }) {
                     <tbody>
                         {Object.entries(monopolyData).map(
                             ([monopoly, value]) => (
-                                <tr className="bg-white bg-opacity-5">
+                                <tr
+                                    key={"desktop_" + monopoly}
+                                    className="bg-white bg-opacity-5"
+                                >
                                     <td className="p-3">{monopoly}</td>
                                     {Object.entries(monopolyData[monopoly]).map(
                                         ([key, data]) => (
-                                            <td className="p-3">
+                                            <td
+                                                key={
+                                                    "desktop_" +
+                                                    monopoly +
+                                                    "_" +
+                                                    key
+                                                }
+                                                className="p-3"
+                                            >
                                                 {data.toLocaleString()}
                                             </td>
                                         )
@@ -42,7 +53,10 @@ function MonopolyTable({ monopolyData }) {
             </div>
             <div className="lg:hidden">
                 {Object.entries(monopolyData).map(([monopoly, value]) => (
-                    <div className="mt-3 p-3 font-light rounded-md text-gray-200 bg-white bg-opacity-5">
+                    <div
+                        key={"mobile_" + monopoly}
+                        className="mt-3 p-3 font-light rounded-md text-gray-200 bg-white bg-opacity-5"
+                    >
                         <div className="text-xl">{monopoly}</div>
                         <div className="mt-auto ml-auto">
                             {monopolyData[monopoly][
