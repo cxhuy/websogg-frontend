@@ -14,8 +14,8 @@ import Footer from "./components/global/footer";
 function App() {
     return (
         <Router>
-            <div class="m-0 h-min w-screen xs:w-screen bg-gray-900">
-                <div class="container mx-auto lg:w-10/12 xl:w-8/12">
+            <div className="m-0 h-min w-screen xs:w-screen bg-gray-900">
+                <div className="container mx-auto lg:w-10/12 xl:w-8/12">
                     <Navbar />
                     <Routes>
                         <Route path="/" element={<Home />} />

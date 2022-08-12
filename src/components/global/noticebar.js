@@ -2,14 +2,14 @@ import React from "react";
 
 function noticebar({ noticeMsg }) {
     return (
-        <div class="container px-3 pt-1">
+        <div className="container px-3 pt-1">
             <div
-                class="flex p-2 text-sm rounded-md bg-gray-700 text-gray-200 bg-opacity-50"
+                className="flex p-2 text-sm rounded-md bg-gray-700 text-gray-200 bg-opacity-50"
                 role="alert"
             >
                 <svg
                     aria-hidden="true"
-                    class="flex-shrink-0 inline w-5 h-5 mr-2"
+                    className="flex-shrink-0 inline w-5 h-5 mr-2"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +20,7 @@ function noticebar({ noticeMsg }) {
                         clip-rule="evenodd"
                     ></path>
                 </svg>
-                <span class="sr-only">Info</span>
+                <span className="sr-only">Info</span>
                 <div>{noticeMsg}</div>
             </div>
         </div>
