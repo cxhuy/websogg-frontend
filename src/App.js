@@ -11,11 +11,14 @@ import NotFound from "./pages/NotFound";
 import Navbar from "./components/global/navbar.js";
 import Footer from "./components/global/footer";
 
+import RouteChangeTracker from "./components/global/RouteChangeTracker";
+
 function App() {
     return (
         <Router>
             <div className="m-0 h-min w-screen xs:w-screen bg-gray-900">
                 <div className="container mx-auto lg:w-10/12 xl:w-8/12">
+                    <RouteChangeTracker />
                     <Navbar />
                     <Routes>
                         <Route path="/" element={<Home />} />
